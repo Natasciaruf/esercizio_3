@@ -1,0 +1,20 @@
+cd esercizio_3/
+git init
+git status
+git branch
+git checkout -b develop
+git status
+git add index.html
+git status
+git commit -m "prima commit"
+git chackout -b homepage
+git add homepage.html
+git commit -m "add homepage"
+git status
+git switch develop
+git status
+git merge homepage
+git remote add origin https://github.com/Natasciaruf/esercizio_3.git
+git status
+git branch -M main
+git push -u origin main

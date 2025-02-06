@@ -1,0 +1,41 @@
+<!-- Prova a creare una piccola pagina che consenta all'utente di inserire un titolo di libro e poi aggiungerlo a una lista sotto. 
+Ogni volta che viene aggiunto un titolo, prova a cambiare il colore del titolo aggiunto (ad esempio, alternando tra rosso e verde). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Libri</h1>
+   <label for="libri">inserisci titolo libri</label>
+   <input type="testo" id="titoloLibri">
+<button id="aggiungoLibri"> Inserisci </button>
+<ul id="inserisci"></ul>
+    <script> 
+        let libri = document.querySelector("#libri");
+        let aggiungoLibri = document.querySelector("#aggiungoLibri");
+        let inserisci = document.querySelector("#inserisci")
+
+        //funzione
+        inserisci.addEventListener("click", function(){
+            let nuoviLibri= libri.value.trim() //per ottenere il valore del titolo
+
+            if (nuoviLibri !== ""){
+                const elementi = document.createElement("li");
+                elementi.textContent = nuoviLibri
+
+            inserisci.appendChild(inserisci)
+            
+            libri.value = ""
+            }else{
+                alert("inserisci un titolo valido.")
+            }
+
+        
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- Esercizio 1: Crea un semplice HTML con un titolo, un paragrafo e un bottone.
+ Usa JavaScript per selezionare e cambiare il contenuto di questi elementi (modificare il testo, il colore di sfondo, ecc.). -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <h1> Titolo pagina </h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptas, deleniti aliquam labore quis cupiditate assumenda exercitationem <br>
+     fugiat facere eum, eos commodi recusandae distinctio quae vitae! Expedita possimus temporibus quidem.</p>
+     <button> Clicca qui! </button>
+ </body>
+ <script>
+const titolo = document.querySelector('h1')
+const paragrafo = document.querySelector('p')
+const bottone = document.querySelector('button')
+
+titolo.textContent = "Questo è il titolo modificato";
+paragrafo.textContent = "Questo è il nuovo paragrafo";
+paragrafo.style.color = "red"
+bottone.textContent = "Bottone!"
+
+bottone.addEventListener('click', function(){
+titolo.style.color = "green"
+})
+
+ </script>
+ </html>

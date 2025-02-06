@@ -1,0 +1,30 @@
+<!-- Crea una lista di numeri e aggiungi ciascun numero come un elemento <li>
+in una lista non ordinata (<ul>) ogni volta che l'utente clicca su un bottone. -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1> Lista numeri </h1>
+        <button id= "aggiungi"> aggiungi numeri </button>
+        <ul id="lista"></ul>
+
+        <script>
+            const aggiungi = document.querySelector("#aggiungi")
+            const lista = document.querySelector("#lista")
+            let counter = 1
+
+            aggiungi.addEventListener("click", function(){
+                const elementi = document.createElement("li");
+                elementi.textContent = counter;
+                lista.appendChild(elementi);
+                counter++
+            })
+        </script>
+    </body>
+
+    </html>

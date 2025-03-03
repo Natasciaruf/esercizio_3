@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      font-size: 16px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #c8ddc9;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #bed4bf;
+    }
+
+    .output {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #e0f7e0;
+      border: 1px solid #d8ead8;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Modulo di Contatto</h2>
+    <form id="contactForm">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="submit">Invia</button>
+    </form>
+
+    <div class="output" id="outputArea" style="display: none;">
+      <h3>Dati Inviati:</h3>
+      <p id="outputName"></p>
+      <p id="outputEmail"></p>
+    </div>
+  </div>
+
+  <script>
+  
+    const datiArray = [];
+
+    const form = document.getElementById('contactForm');
+    const outputArea = document.getElementById('outputArea');
+    const outputName = document.getElementById('outputName');
+    const outputEmail = document.getElementById('outputEmail');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+
+      datiArray.push({ nome: name, email: email });
+
+      console.log(datiArray);
+
+    });
+  </script>
+
+</body>
+</html>

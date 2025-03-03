@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form di registrazione</title>
+    <style> 
+       body {
+        display: flex;
+            justify-content: center;  
+            align-items: center;      
+            height: 100vh;            
+            margin: 0;               
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;  
+            width: 100%;
+            max-width: 400px; 
+        }
+
+        h1 {
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+        
+        }
+        input {
+            margin: 10px 0;
+            padding: 8px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #9d2f76;
+            color: white;
+            border: none;
+            cursor: pointer;
+          display: flex;
+            justify-content: center;
+        }
+        button:hover {
+            background-color: #ff00a2;
+        }
+
+
+    </style>
+</head>
+<body>
+    <form>
+        <div class="container">
+        <h1> Modulo di registrazione </h1>
+
+        <label for="nameForm" id="titolo"> Nome: </label> <br>
+        <input type="text" id="nameForm" name="name"> <br>
+
+        <label for="surname" id="titolo"> Cognome: </label> <br>
+        <input type="text" id="surname" name="surname"> <br>
+
+        <label for="email" id="titolo"> E-mail </label> <br>
+        <input type="email" id="email" name="email"> <br>
+
+        <label for="telphone" id="titolo"> Numero di telefono: </label> <br>
+        <input type="tel" maxlength="10" id="telphone"> <br>
+        
+        <p>↓ Clicca qui per inviare la tua candidatura ↓ </p>
+        <button type="submit" id="buttonSubmit"> Invia </button>
+    </form>
+    <script>
+        const nameForm = document.getElementById("nameForm");
+        const surname= document.getElementById("surname");
+        const email= document.getElementById("email")
+        const telphone= document.getElementById("telphone")
+        const button = document.getElementById("buttonSubmit")
+
+        button.addEventListener("click", (events) => {
+            events.preventDefault()
+
+            const elements = {
+            name: nameForm.value,
+            surname: surname.value,
+            email: email.value,
+            telphone: telphone.value,
+        }
+
+            sessionStorage.setItem('formData', JSON.stringify(elements));
+
+            console.log(elements);
+
+            alert('I tuoi dati sono stati inviati correttamente!');
+    
+        })
+
+    </script> 
+    </div>
+</body>
+</html>
